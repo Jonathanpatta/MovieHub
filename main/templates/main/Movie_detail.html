@@ -1,0 +1,44 @@
+{% extends 'main/header.html' %}
+
+
+
+{% block content %}
+
+    <div class="container">
+        <h1 style="color: black">
+        <div class="card-panel teal lighten-2" style="text-align: center;">{{movie.title}}</div>
+        </h1>
+        <h6 style="color: black">
+        <p><img src={{movie.cover.url}} class="materialboxed" width="600"></p>
+        <div class="card-panel teal lighten-2">{{movie.description}}</div>
+        <table>
+            <tbody>
+              <tr>
+                <td>director</td>
+                <td>{{movie.directed_by}}</td>
+              </tr>
+              <tr>
+                <td>imdb_rating</td>
+                <td>{{movie.imdb_rating}}</td>
+              </tr>
+              <tr>
+                <td>rotten_tomatoes_rating</td>
+                <td>{{movie.rotten_tomatoes_rating}}</td>
+              </tr>
+              <tr>
+                <td>Jonathan</td>
+                <td>{{movie.length_in_mins}}</td>
+              </tr>
+              <tr>
+                <td>release_date</td>
+                <td>{{movie.release_date}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </h6>
+        <a class="waves-effect waves-light btn" href="/movie/{{movie.pk}}/delete">delete movie</a>
+        <a class="waves-effect waves-light btn" href="/movie/{{movie.pk}}/update">update</a>
+    </div>
+{% endblock %}
+
+        

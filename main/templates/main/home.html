@@ -1,0 +1,29 @@
+{% extends 'main/header.html' %}
+
+
+{% block content %}
+
+
+    
+
+
+    <div class="row">
+      {% for movie in movies %}
+      <div class="col s4">
+        <div class="card">
+          <div class="card-image">
+            <img src="{{movie.cover.url}}">
+            <span class="card-title">{{movie.title}}</span>
+          </div>
+          <div class="card-content">
+            <p>imdb_rating:{{movie.imdb_rating}}</p>
+          </div>
+          <div class="card-action">
+            <a href="movie/{{movie.pk}}">view more</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+{% endblock %}

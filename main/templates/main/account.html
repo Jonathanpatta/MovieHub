@@ -1,0 +1,29 @@
+{% extends 'main/header.html' %}
+
+{% block content %}
+    <div class="row"><h1>{{user}}</h1></div>
+
+    <div class="card-panel teal lighten-2">Viewed</div>
+    <div class="collection">
+    {% for mv in viewed %}
+        <a href="/movie/{{mv.pk}}" class="collection-item">{{mv.title}}</a>
+    {% endfor %}
+    </div>
+
+    <div class="card-panel teal lighten-2">Added</div>
+    <div class="collection">
+    {% for mv in added %}
+        <a href="/movie/{{mv.pk}}" class="collection-item">{{mv.title}}</a>
+    {% endfor %}
+    </div>
+
+    <div class="card-panel teal lighten-2">Updated</div>
+    <div class="collection">
+    {% for mv in changed %}
+        <a href="/movie/{{mv.pk}}" class="collection-item">{{mv.title}}</a>
+    {% endfor %}
+    </div>
+
+
+
+{% endblock %}
